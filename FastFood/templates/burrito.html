@@ -1,0 +1,227 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burrito Menu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            color: white;
+            background: #333; /* Grey background */
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, #444, #555); /* Dark grey gradient */
+            color: white;
+            text-align: center;
+            padding: 3rem 1rem;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin: 0;
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            margin-top: 1rem;
+        }
+
+        /* Menu List Section */
+        .menu-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background: #444; /* Lighter grey for contrast */
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            border-bottom: 1px solid #555; /* Subtle border for separation */
+        }
+
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+
+        .menu-item img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-right: 1rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .menu-item img:hover {
+            transform: scale(1.1); /* Slight zoom on hover */
+        }
+
+        .menu-details {
+            flex-grow: 1;
+        }
+
+        .menu-details h3 {
+            font-size: 1.5rem;
+            margin: 0 0 0.5rem;
+            color: #ff914d; /* Highlighted text */
+        }
+
+        .menu-details p {
+            font-size: 1rem;
+            margin: 0.5rem 0;
+            color: #ddd; /* Light grey for description */
+        }
+
+        .menu-details .price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: white; /* White for price emphasis */
+        }
+
+        /* Footer Section */
+        .footer {
+            text-align: center;
+            padding: 1rem;
+            background: #222; /* Darker grey for footer */
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        /* Return Button */
+        .return-btn-container {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .return-btn {
+            background: #ff914d;
+            color: white;
+            border: none;
+            padding: 0.8rem 1.2rem;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .return-btn:hover {
+            background: #ff5733;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <div class="header">
+        <h1>Burrito Menu</h1>
+        <p>Explore our delicious and hearty burritos!</p>
+    </div>
+
+    <!-- Menu List Section -->
+    <div class="menu-container">
+        <!-- Menu Item 1 -->
+        <div class="menu-item">
+            <img src="{% static 'images/burrito1.jpg' %}" alt="Classic Burrito">
+            <div class="menu-details">
+                <h3>No. 1 - Classic Burrito</h3>
+                <p>Stuffed with rice, beans, cheese, and your choice of protein.</p>
+                <div class="price">$8.99</div>
+            </div>
+        </div>
+
+        <!-- Menu Item 2 -->
+        <div class="menu-item">
+            <img src="{% static 'images/burrito2.jpg' %}" alt="Chicken Burrito">
+            <div class="menu-details">
+                <h3>No. 2 - Chicken Burrito</h3>
+                <p>Grilled chicken, rice, beans, and fresh salsa.</p>
+                <div class="price">$9.50</div>
+            </div>
+        </div>
+
+        <!-- Menu Item 3 -->
+        <div class="menu-item">
+            <img src="{% static 'images/burrito3.jpg' %}" alt="Beef Burrito">
+            <div class="menu-details">
+                <h3>No. 3 - Beef Burrito</h3>
+                <p>Juicy beef, black beans, rice, and queso fresco.</p>
+                <div class="price">$10.25</div>
+            </div>
+        </div>
+
+        <!-- Menu Item 4 -->
+        <div class="menu-item">
+            <img src="{% static 'images/burrito4.jpg' %}" alt="Veggie Burrito">
+            <div class="menu-details">
+                <h3>No. 4 - Veggie Burrito</h3>
+                <p>Loaded with fresh veggies, guacamole, and beans.</p>
+                <div class="price">$8.50</div>
+            </div>
+        </div>
+
+        <!-- Menu Item 5 -->
+        <div class="menu-item">
+            <img src="{% static 'images/burrito5.jpg' %}" alt="Shrimp Burrito">
+            <div class="menu-details">
+                <h3>No. 5 - Shrimp Burrito</h3>
+                <p>Succulent shrimp, rice, beans, and spicy aioli.</p>
+                <div class="price">$11.00</div>
+            </div>
+        </div>
+
+        <!-- Menu Item 6 -->
+        <div class="menu-item">
+            <img src="{% static 'images/burrito6.jpg' %}" alt="Breakfast Burrito">
+            <div class="menu-details">
+                <h3>No. 6 - Breakfast Burrito</h3>
+                <p>Eggs, bacon, cheese, and hash browns wrapped in a tortilla.</p>
+                <div class="price">$9.25</div>
+            </div>
+        </div>
+
+        <!-- Menu Item 7 -->
+        <div class="menu-item">
+            <img src="{% static 'images/burrito7.jpg' %}" alt="Spicy Burrito">
+            <div class="menu-details">
+                <h3>No. 7 - Spicy Burrito</h3>
+                <p>Spiced beef, hot salsa, and melted cheese.</p>
+                <div class="price">$10.50</div>
+            </div>
+        </div>
+        <!-- Menu Item 8 -->
+        <div class="menu-item">
+            <img src="{% static 'images/burrito8.jpg' %}" alt="Spicy Burrito">
+            <div class="menu-details">
+                <h3>No. 8 - The Tsunami Burrito</h3>
+                <p>meat, and comes with rice, beans, pico de gallo, guacamole, cheese, and sour cream.</p>
+                <div class="price">$95.99</div>
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- Return Button Section -->
+    <div class="return-btn-container">
+        <button class="return-btn" id="returnButton">Back Menu</button>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="footer">
+        © 2025 Fast Food Restaurant. All Rights Reserved.
+    </div>
+
+    <!-- Link to JavaScript -->
+    <script src="{% static 'js/burrito.js' %}"></script>
+</body>
+</html>

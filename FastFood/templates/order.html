@@ -1,0 +1,263 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Menu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            color: grey;
+            background: #333;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #444, #555);
+            text-align: center;
+            padding: 3rem 1rem;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin: 0;
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            margin-top: 0.5rem;
+        }
+
+        .order-container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: #444;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .personal-info {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: #555;
+            border-radius: 10px;
+        }
+
+        .personal-info label {
+            font-size: 1.1rem;
+            color: #ff914d;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .personal-info input {
+            width: 100%;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid #555;
+        }
+
+        .order-item:last-child {
+            border-bottom: none;
+        }
+
+        .order-item label {
+            font-size: 1.2rem;
+            color: #ff914d;
+        }
+
+        .order-item select,
+        .order-item input {
+            padding: 0.5rem;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+        }
+
+        .order-item input[type="number"] {
+            max-width: 80px;
+        }
+
+        .total-price {
+            margin-top: 2rem;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #ff914d;
+            color: whitesmoke;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            margin: 0 1rem;
+        }
+
+        .btn:hover {
+            background: grey;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Place Your Order</h1>
+        <p>Provide your details, select your items, and calculate your total price!</p>
+    </div>
+
+    <div class="order-container">
+        <!-- Personal Information -->
+        <div class="personal-info">
+            <label for="customerName">Name</label>
+            <input type="text" id="customerName" placeholder="Enter your name" required>
+
+            <label for="customerEmail">Email</label>
+            <input type="email" id="customerEmail" placeholder="Enter your email" required>
+
+            <label for="customerPhone">Telephone</label>
+            <input type="tel" id="customerPhone" placeholder="Enter your phone number" required>
+
+            <label for="customerLocation">Location</label>
+            <input type="text" id="customerLocation" placeholder="Enter your delivery location" required>
+        </div>
+
+        <!-- Burgers -->
+        <div class="order-item">
+            <label for="burgerSelect">Burger</label>
+            <select id="burgerSelect">
+                <option value="" enabled selected>Select a Burger</option>
+                <option value="8.50">Hamburger - $8.50</option>
+                <option value="7.00">Turkey Burger - $7.00</option>
+                <option value="8.75">Bacon Cheese Burger - $8.75</option>
+                <option value="8.50">Classic Hamburger - $8.50</option>
+                <option value="7.75">Veggies Burger - $7.75</option>
+                <option value="9.50">Chili Cheese Burger - $9.50</option>
+                <option value="8.50">Grilled Chicken Burger - $8.50</option>
+                <option value="8.00">Mexican Burger - $8.00</option>
+                <option value="7.50">Mushroom Burger - $7.50</option>
+                <option value="6000.00">Burger Has Wagyu Beef, Beluga Caviar - $6000.00</option>
+            </select>
+            <input type="number" id="burgerQty" min="0" placeholder="Qty">
+        </div>
+
+        <!-- Pizzas -->
+        <div class="order-item">
+            <label for="pizzaSelect">Pizza</label>
+            <select id="pizzaSelect">
+                <option value="" enabled selected>Select a Pizza</option>
+                <option value="8.99">Margherita Pizza - $8.99</option>
+                <option value="9.99">Pepperoni Pizza - $9.99</option>
+                <option value="9.50">Veggies Pizza - $9.50</option>
+                <option value="10.50">BBQ Chicken Pizza - $10.50</option>
+                <option value="9.75">Hawaiian Pizza - $9.75</option>
+                <option value="11.00">Meat Lovers Pizza - $11.00</option>
+                <option value="10.25">Four Cheese Pizza - $10.25</option>
+                <option value="10.00">Spicy Jalapeño Pizza - $10.00</option>
+                <option value="9.99">White Sauce Pizza - $9.99</option>
+                <option value="12.50">Supreme Pizza - $12.50</option>
+            </select>
+            <input type="number" id="pizzaQty" min="0" placeholder="Qty">
+        </div>
+
+        <!-- Burritos -->
+        <div class="order-item">
+            <label for="burritoSelect">Burrito</label>
+            <select id="burritoSelect">
+                <option value="" enabled selected>Select a Burrito</option>
+                <option value="8.99">Classic Burrito - $8.99</option>
+                <option value="9.50">Chicken Burrito - $9.50</option>
+                <option value="10.25">Beef Burrito - $10.25</option>
+                <option value="8.50">Veggies Burrito - $8.50</option>
+                <option value="11.00">Shrimp Burrito - $11.00</option>
+                <option value="9.25">Breakfast Burrito - $9.25</option>
+                <option value="95.99">The Tsunami Burrito - $95.99</option>
+            </select>
+            <input type="number" id="burritoQty" min="0" placeholder="Qty">
+        </div>
+
+        <!-- Drinks -->
+        <div class="order-item">
+            <label for="drinkSelect">Drink</label>
+            <select id="drinkSelect">
+                <option value="" enabled selected>Select a Drink</option>
+                <option value="3.50">Lemonade - $3.50</option>
+                <option value="3.25">Iced Tea - $3.25</option>
+                <option value="4.75">Berry Smoothie - $4.75</option>
+                <option value="2.50">Classic Soda - $2.50</option>
+                <option value="3.00">Hot Coffee - $3.00</option>
+                <option value="4.50">Chocolate Milkshake - $4.50</option>
+                <option value="5.00">Tropical Mocktail - $5.00</option>
+                <option value="14.99">Manhattan - $14.99</option>
+            </select>
+            <input type="number" id="drinkQty" min="0" placeholder="Qty">
+        </div>
+
+        <!-- Ice Cream -->
+        <div class="order-item">
+            <label for="icecreamSelect">Ice Cream</label>
+            <select id="icecreamSelect">
+                <option value="" enabled selected>Select a Ice Cream</option>
+                <option value="3.50">Vanilla Ice Cream - $3.50</option>
+                <option value="4.00">Chocolate Ice Cream - $4.00</option>
+                <option value="3.75">Strawberry Ice Cream - $3.75</option>
+                <option value="4.25">Mint Chocolate Chip - $4.25</option>
+                <option value="4.50">Cookies and Cream - $4.50</option>
+            </select>
+            <input type="number" id="icecreamQty" min="0" placeholder="Qty">
+        </div>
+
+        <!-- Wines -->
+        <div class="order-item">
+            <label for="wineSelect">Wine</label>
+            <select id="wineSelect">
+                <option value="" enabled selected>Select a Wine</option>
+                <option value="8.99">Classic Red Wine - $8.99</option>
+                <option value="9.50">Chardonnay - $9.50</option>
+                <option value="10.25">Rosé Wine - $10.25</option>
+                <option value="12.00">Sparkling Wine - $12.00</option>
+                <option value="11.50">Dessert Wine - $11.50</option>
+                <option value="9.75">Sauvignon Blanc - $9.75</option>
+                <option value="588.00">Domaine de la Romanee-Conti Grand Cru 1945 - $558.00</option>
+            </select>
+            <input type="number" id="wineQty" min="0" placeholder="Qty">
+        </div>
+
+        <!-- Total Price -->
+        <div class="total-price" id="totalPrice">
+            Total Price: $0.00
+        </div>
+
+        <!-- Buttons -->
+        <div class="button-container">
+            <button class="btn" id="submitOrder">Submit Order</button>
+            <button class="btn" id="returnToMenu">Return Home</button>
+        </div>
+    </div>
+
+    <script src="{% static 'js/order.js' %}"></script>
+</body>
+</html>

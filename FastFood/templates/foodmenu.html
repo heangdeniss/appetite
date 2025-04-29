@@ -1,0 +1,214 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Menu - Fast Food Restaurant</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            color: white;
+            background: #333;
+        }
+
+        /* Header Section */
+        .header {
+            text-align: center;
+            padding: 3rem 1rem;
+            background: linear-gradient(135deg, #444, #555);
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin: 0;
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            margin-top: 1rem;
+        }
+
+        /* Menu Grid */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            padding: 2rem;
+        }
+
+        .menu-item {
+            position: relative;
+            height: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .menu-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        .menu-item .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .menu-item:hover .overlay {
+            opacity: 1;
+        }
+
+        .menu-item h2 {
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        .menu-item p {
+            margin-top: 0.5rem;
+            font-size: 1rem;
+        }
+
+        /* Background Images */
+        .burger {
+            background-image: url("{% static 'images/burger.jpg' %}");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .pizza {
+            background-image: url("{% static 'images/pizza.jpg' %}");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .burrito {
+            background-image: url("{% static 'images/burrito.jpg' %}");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .drink {
+            background-image: url("{% static 'images/drink.jpg' %}");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .ice-cream {
+            background-image: url("{% static 'images/icecream.jpg' %}");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .wine {
+            background-image: url("{% static 'images/wine.jpg' %}");
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Return Button */
+        .return-btn-container {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .return-btn {
+            background: #ff914d;
+            color: white;
+            border: none;
+            padding: 0.8rem 1.2rem;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .return-btn:hover {
+            background: #ff5733;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <div class="header">
+        <h1>Our Food Menu</h1>
+        <p>Explore our delicious menu options below!</p>
+    </div>
+
+    <!-- Menu Grid -->
+    <div class="menu-grid">
+        <!-- Burger Section -->
+        <div class="menu-item burger" data-url="burger/">
+            <div class="overlay">
+                <h2>Burger</h2>
+                <p>Juicy, flavorful, and grilled to perfection.</p>
+            </div>
+        </div>
+
+        <!-- Pizza Section -->
+        <div class="menu-item pizza" data-url="pizza/">
+            <div class="overlay">
+                <h2>Pizza</h2>
+                <p>Cheesy, crispy, and loaded with your favorite toppings.</p>
+            </div>
+        </div>
+
+        <!-- Burrito Section -->
+        <div class="menu-item burrito" data-url="burrito/">
+            <div class="overlay">
+                <h2>Burrito</h2>
+                <p>A delicious wrap filled with fresh ingredients.</p>
+            </div>
+        </div>
+
+        <!-- Drink Section -->
+        <div class="menu-item drink" data-url="drink/">
+            <div class="overlay">
+                <h2>Drink</h2>
+                <p>Refreshing beverages to complete your meal.</p>
+            </div>
+        </div>
+
+        <!-- Ice Cream Section -->
+        <div class="menu-item ice-cream" data-url="icecream/">
+            <div class="overlay">
+                <h2>Ice Cream</h2>
+                <p>Cool, creamy, and irresistibly sweet.</p>
+            </div>
+        </div>
+
+        <!-- Wine Section -->
+        <div class="menu-item wine" data-url="wine/">
+            <div class="overlay">
+                <h2>Wine</h2>
+                <p>Finest selection of reds, whites, and rosés.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Return Button Section -->
+    <div class="return-btn-container">
+        <button class="return-btn" id="returnButton">Back Home</button>
+    </div>
+
+    <!-- Link to JavaScript -->
+    <script src="{% static 'js/foodmenu.js' %}"></script>
+</body>
+</html>

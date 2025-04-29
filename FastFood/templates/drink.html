@@ -1,0 +1,227 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drink Menu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            color: white;
+            background: #333; /* Grey background */
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, #444, #555); /* Dark grey gradient */
+            color: white;
+            text-align: center;
+            padding: 3rem 1rem;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin: 0;
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            margin-top: 1rem;
+        }
+
+        /* Menu List Section */
+        .menu-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background: #444; /* Lighter grey for contrast */
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            border-bottom: 1px solid #555; /* Subtle border for separation */
+        }
+
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+
+        .menu-item img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-right: 1rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .menu-item img:hover {
+            transform: scale(1.1); /* Slight zoom on hover */
+        }
+
+        .menu-details {
+            flex-grow: 1;
+        }
+
+        .menu-details h3 {
+            font-size: 1.5rem;
+            margin: 0 0 0.5rem;
+            color: #ff914d; /* Highlighted text */
+        }
+
+        .menu-details p {
+            font-size: 1rem;
+            margin: 0.5rem 0;
+            color: #ddd; /* Light grey for description */
+        }
+
+        .menu-details .price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: white; /* White for price emphasis */
+        }
+
+        /* Footer Section */
+        .footer {
+            text-align: center;
+            padding: 1rem;
+            background: #222; /* Darker grey for footer */
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        /* Return Button */
+        .return-btn-container {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .return-btn {
+            background: #ff914d;
+            color: white;
+            border: none;
+            padding: 0.8rem 1.2rem;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .return-btn:hover {
+            background: #ff5733;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <div class="header">
+        <h1>Drink Menu</h1>
+        <p>Explore our refreshing and tasty drinks!</p>
+    </div>
+
+    <!-- Menu List Section -->
+    <div class="menu-container">
+        <!-- Menu Item 1 -->
+        <div class="menu-item">
+            <img src="{% static 'images/drink1.jpg' %}" alt="Lemonade">
+            <div class="menu-details">
+                <h3>No. 1 - Lemonade</h3>
+                <p>Freshly squeezed lemons with a hint of mint.</p>
+                <div class="price">$3.50</div>
+            </div>
+        </div>
+
+        <!-- Menu Item 2 -->
+        <div class="menu-item">
+            <img src="{% static 'images/drink2.jpg' %}" alt="Iced Tea">
+            <div class="menu-details">
+                <h3>No. 2 - Iced Tea</h3>
+                <p>Cool and refreshing with a slice of lemon.</p>
+                <div class="price">$3.25</div>
+            </div>
+        </div>
+
+        <!-- Menu Item 3 -->
+        <div class="menu-item">
+            <img src="{% static 'images/drink3.jpg' %}" alt="Smoothie">
+            <div class="menu-details">
+                <h3>No. 3 - Berry Smoothie</h3>
+                <p>A mix of strawberries, blueberries, and raspberries.</p>
+                <div class="price">$4.75</div>
+            </div>
+        </div>
+
+        <!-- Menu Item 4 -->
+        <div class="menu-item">
+            <img src="{% static 'images/drink4.jpg' %}" alt="Soda">
+            <div class="menu-details">
+                <h3>No. 4 - Classic Soda</h3>
+                <p>Chilled and fizzy, a classic thirst-quencher.</p>
+                <div class="price">$2.50</div>
+            </div>
+        </div>
+
+        <!-- Menu Item 5 -->
+        <div class="menu-item">
+            <img src="{% static 'images/drink5.jpg' %}" alt="Coffee">
+            <div class="menu-details">
+                <h3>No. 5 - Hot Coffee</h3>
+                <p>Brewed to perfection with a rich aroma.</p>
+                <div class="price">$3.00</div>
+            </div>
+        </div>
+
+        <!-- Menu Item 6 -->
+        <div class="menu-item">
+            <img src="{% static 'images/drink6.jpg' %}" alt="Milkshake">
+            <div class="menu-details">
+                <h3>No. 6 - Chocolate Milkshake</h3>
+                <p>Thick and creamy with a drizzle of chocolate syrup.</p>
+                <div class="price">$4.50</div>
+            </div>
+        </div>
+
+        <!-- Menu Item 7 -->
+        <div class="menu-item">
+            <img src="{% static 'images/drink7.jpg' %}" alt="Mocktail">
+            <div class="menu-details">
+                <h3>No. 7 - Tropical Mocktail</h3>
+                <p>A mix of tropical fruits with a splash of soda.</p>
+                <div class="price">$5.00</div>
+            </div>
+        </div>
+
+        <!-- Menu Item 8 -->
+        <div class="menu-item">
+            <img src="{% static 'images/drink8.jpg' %}" alt="Energy Drink">
+            <div class="menu-details">
+                <h3>No. 8 - Manhattan</h3>
+                <p>A Manhattan is a cocktail made with whiskey, sweet vermouth, and bitters.</p>
+                <div class="price">$14.99</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Return Button Section -->
+    <div class="return-btn-container">
+        <button class="return-btn" id="returnButton">Return</button>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="footer">
+        © 2025 Fast Food Restaurant. All Rights Reserved.
+    </div>
+
+    <!-- Link to JavaScript -->
+    <script src="{% static 'js/drink.js' %}"></script>
+</body>
+</html>

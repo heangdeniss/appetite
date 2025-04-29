@@ -1,0 +1,200 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    <!-- Font Awesome for Social Media Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="{% static 'js/index.js' %}" defer></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            height: 100vh;
+        }
+
+        /* Sidebar Styling */
+        .sidebar {
+            width: 300px;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 1rem;
+        }
+
+        /* Clock Styling */
+        .clock-container {
+            text-align: center;
+            color: cyan; /* Neon greenish-blue color */
+            text-shadow: 0 0 5px darkcyan, 0 0 10px darkcyan, 0 0 20px darkcyan; /* Glowing effect */
+            margin-bottom: 2rem;
+        }
+
+        .clock-container #date {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.1rem; /* Space between characters */
+        }
+
+        .clock-container #time {
+            font-size: 2rem;
+            letter-spacing: 0.2rem; /* Space between characters */
+        }
+
+        /* Logo Styling */
+        .logo-image {
+            width: 120px; /* Smaller logo */
+            height: auto;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Navigation Buttons */
+        .nav-buttons {
+            width: 100%;
+            text-align: center;
+        }
+
+        .nav-buttons a {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            color: #fff;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            margin: 0.5rem 0;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            border-radius: 50px;
+            transition: background 0.3s ease-in-out, transform 0.3s, box-shadow 0.3s;
+        }
+
+        .nav-buttons a:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.5);
+        }
+
+        /* Social Media Links */
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            color: #fff;
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            color: #ff0000;
+        }
+
+        /* Main Content Styling */
+        .main-content {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Slideshow Styling */
+        .slideshow {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .slideshow img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transform: scale(1);
+            transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
+        }
+
+        .slideshow img.active {
+            opacity: 1;
+            transform: scale(1.05);
+        }
+
+        /* Floating Text */
+        .floating-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: whitesmoke;
+            font-size: 2rem;
+            font-weight: bold;
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+            animation: float 3s ease-in-out infinite;
+            z-index: 10;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translate(-50%, -50%) translateY(-10px);
+            }
+            50% {
+                transform: translate(-50%, -50%) translateY(10px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <!-- Clock -->
+        <div class="clock-container">
+            <div id="date"></div>
+            <div id="time"></div>
+        </div>
+
+        <!-- Logo -->
+        <a href="https://www.google.com/maps/place/Atlantic+Ocean/@-1.288586,-31.4980413,3z/data=!3m1!4b1!4m6!3m5!1s0x65a81cae36eb8ff:0xa6342257f310534f!8m2!3d-14.5994134!4d-28.6731465!16zL20vMGozYg?entry=ttu&g_ep=EgoyMDI1MDExMC4wIKXMDSoASAFQAw%3D%3D">
+            <img src="{% static 'images/logo1.jpg' %}" alt="Logo" class="logo-image">
+        </a>
+
+        <!-- Navigation Buttons -->
+        <div class="nav-buttons">
+            <a href="{% url 'about' %}">About Us</a>
+            <a href="{% url 'foodmenu' %}">Views Meal</a>
+            <a href="{% url 'order' %}">Order Meal</a>
+            <a href="{% url 'contact' %}">Contact Us</a>
+        </div>
+
+        <!-- Social Media Links -->
+        <div class="social-links">
+            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://x.com/denissdjan?s=21" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="tel:+855 11 468 456"><i class="fas fa-phone"></i></a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="slideshow">
+            <img src="{% static 'images/picture1.jpg' %}" alt="Image 1" class="active">
+            <img src="{% static 'images/picture2.jpg' %}" alt="Image 2">
+            <img src="{% static 'images/picture3.jpg' %}" alt="Image 3">
+            <img src="{% static 'images/picture4.jpg' %}" alt="Image 4">
+            <img src="{% static 'images/picture5.jpg' %}" alt="Image 5">
+        </div>
+        <!-- Floating Text -->
+        <div class="floating-text">Good Quality Delicious and Affordable</div>
+    </div>
+</body>
+</html>

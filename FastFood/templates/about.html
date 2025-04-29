@@ -1,0 +1,231 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Fast Food Restaurant</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            color: white;
+            background-color: #333; /* Grey background */
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, #333);
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin: 0;
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            margin-top: 1rem;
+        }
+
+        /* About Section */
+        .about-section {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem 1rem;
+            background: #444; /* Slightly darker grey for contrast */
+            color: white; /* White text */
+        }
+
+        .about-image {
+            width: 40%;
+            max-width: 400px;
+            margin: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .about-text {
+            max-width: 600px;
+            text-align: center;
+            margin: 1rem;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #ff914d; /* Highlighted orange */
+        }
+
+        .about-text p {
+            line-height: 1.8;
+            font-size: 1.2rem;
+        }
+
+        /* Our Values Section */
+        .values {
+            background: #555; /* Slightly darker grey */
+            padding: 3rem 1rem;
+            text-align: center;
+            color: white;
+        }
+
+        .values h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #ff914d;
+        }
+
+        .values p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            line-height: 1.8;
+        }
+
+        /* Our Team Section */
+        .team-section {
+            padding: 3rem 1rem;
+            background: #444; /* Matches About Section */
+            text-align: center;
+        }
+
+        .team-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #ff914d;
+        }
+
+        .team-members {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .team-member {
+            text-align: center;
+            width: 200px;
+        }
+
+        .team-member img {
+            width: 100%;
+            border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .team-member h3 {
+            margin-top: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .team-member p {
+            font-size: 1rem;
+        }
+
+    /* Back Home Button */
+    .button-container {
+        text-align: center;
+        margin: 2rem 0;
+    }
+
+        .btn {
+            display: inline-block;
+            background: #ff914d;
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            margin: 0 1rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: #333;
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <div class="header">
+        <h1>About Us</h1>
+        <p>Delicious food made fast, fresh, and with love!</p>
+    </div>
+
+    <!-- About Section -->
+    <div class="about-section">
+        <img src="{% static 'images/about.jpg' %}" alt="About Us Image" class="about-image">
+        <div class="about-text">
+            <h2>Our Story</h2>
+            <p>
+                At our fast-food restaurant, we’re dedicated to serving you mouthwatering meals made with 
+                the freshest ingredients. From juicy burgers to crispy fries, every item is crafted with 
+                care to deliver unbeatable flavor. Join us for a quick bite or a family feast!
+            </p>
+        </div>
+    </div>
+
+    <!-- Our Values Section -->
+    <div class="values">
+        <h2>Our Values</h2>
+        <p>
+            Quality, freshness, and customer satisfaction are at the heart of everything we do. 
+            We believe in creating food that not only tastes amazing but also brings people together.
+        </p>
+    </div>
+
+    <!-- Our Team Section -->
+    <div class="team-section">
+        <h2>Meet Our Team</h2>
+        <div class="team-members">
+            <div class="team-member">
+                <img src="{% static 'images/about1.jpg' %}" alt="Chef">
+                <h3>Deniss Leywin</h3>
+                <p>Head Chef</p>
+            </div>
+            <div class="team-member">
+                <img src="{% static 'images/about2.jpg' %}" alt="Manager">
+                <h3>Tessia eralith</h3>
+                <p>Restaurant Manager</p>
+            </div>
+            <div class="team-member">
+                <img src="{% static 'images/about3.jpg' %}" alt="Staff">
+                <h3>Lylia Helstea</h3>
+                <p>Customer Care Specialist</p>
+            </div>
+            <div class="team-member">
+                <img src="{% static 'images/about4.jpg' %}" alt="Staff">
+                <h3>Cecilia</h3>
+                <p>Customer Care Specialist</p>
+            </div>
+            <div class="team-member">
+                <img src="{% static 'images/about8.jpg' %}" alt="Staff">
+                <h3>Clair</h3>
+                <p>Customer Care Specialist</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Button Container -->
+    <div class="button-container">
+        <button class="btn" id="backHome">Back Home</button>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        © 2025 Fast Food Restaurant. All Rights Reserved.
+    </div>
+</body>
+</html>

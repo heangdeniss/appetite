@@ -1,0 +1,116 @@
+{% load static %}\
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            color: white;
+            background: #333;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #444, #555);
+            text-align: center;
+            padding: 3rem 1rem;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin: 0;
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            margin-top: 0.5rem;
+        }
+
+        .contact-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: #444;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-container label {
+            font-size: 1.1rem;
+            color: #ff914d;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .contact-container input,
+        .contact-container textarea {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1.5rem;
+            border: none;
+            border-radius: 5px;
+            background: #555;
+            color: white;
+            font-size: 1rem;
+        }
+
+        .contact-container textarea {
+            height: 150px;
+        }
+
+        .button-container {
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #ff914d;
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            margin: 0 1rem;
+        }
+
+        .btn:hover {
+            background: grey;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Contact Us</h1>
+        <p>We'd love to hear from you! Please fill out the form below.</p>
+    </div>
+
+    <div class="contact-container">
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Enter your name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
+
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" placeholder="Enter your phone number" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" placeholder="Enter your message" required></textarea>
+
+        <div class="button-container">
+            <button class="btn" id="submitMessage">Submit</button>
+            <button class="btn" id="returnHome">Return Home</button>
+        </div>
+    </div>
+
+    <script src="{% static 'js/contact.js' %}"></script>
+</body>
+</html>

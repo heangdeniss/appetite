@@ -1,0 +1,236 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burger Menu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            color: white; /* White text for readability */
+            background: #333; /* Grey background */
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, #444, #555); /* Dark grey gradient */
+            color: white;
+            text-align: center;
+            padding: 3rem 1rem;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin: 0;
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            margin-top: 1rem;
+        }
+
+        /* Menu List Section */
+        .menu-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background: #444; /* Lighter grey for contrast */
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            border-bottom: 1px solid #555; /* Subtle border for separation */
+        }
+
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+
+        .menu-item img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-right: 1rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .menu-item img:hover {
+            transform: scale(1.1); /* Slight zoom on hover */
+        }
+
+        .menu-details {
+            flex-grow: 1;
+        }
+
+        .menu-details h3 {
+            font-size: 1.5rem;
+            margin: 0 0 0.5rem;
+            color: #ff914d; /* Highlighted text */
+        }
+
+        .menu-details p {
+            font-size: 1rem;
+            margin: 0.5rem 0;
+            color: #ddd; /* Light grey for description */
+        }
+
+        .menu-details .price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: white; /* White for price emphasis */
+        }
+
+        /* Footer Section */
+        .footer {
+            text-align: center;
+            padding: 1rem;
+            background: #222; /* Darker grey for footer */
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        /* Return Button */
+        .return-btn-container {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .return-btn {
+            background: #ff914d;
+            color: white;
+            border: none;
+            padding: 0.8rem 1.2rem;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .return-btn:hover {
+            background: #ff5733;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <div class="header">
+        <h1>Burger Menu</h1>
+        <p>Explore our juicy and delicious burgers!</p>
+    </div>
+
+    <!-- Menu List Section -->
+    <div class="menu-container">
+        <!-- Menu Item 1 -->
+        <div class="menu-item">
+            <img src="{% static 'images/burger1.jpg' %}" alt="Hamburger">
+            <div class="menu-details">
+                <h3>No. 1 - Hamburger</h3>
+                <p>Served with mustard, mayo, lettuce, tomato, pickle, onion.</p>
+                <div class="price">$8.50</div>
+            </div>
+        </div>
+
+        <!-- Menu Item 2 -->
+        <div class="menu-item">
+            <img src="{% static 'images/burger2.jpg' %}" alt="Turkey Burger">
+            <div class="menu-details">
+                <h3>No. 2 - Turkey Burger</h3>
+                <p>With tomato, onion, lettuce, and garlic mayo.</p>
+                <div class="price">$7.00</div>
+            </div>
+        </div>
+
+        <!-- Menu Item 3 -->
+        <div class="menu-item">
+            <img src="{% static 'images/burger3.jpg' %}" alt="Bacon Cheese Burger">
+            <div class="menu-details">
+                <h3>No. 3 - Bacon Cheese Burger</h3>
+                <p>Fresh ground, hickory bacon, Swiss, and mozzarella.</p>
+                <div class="price">$8.75</div>
+            </div>
+        </div>
+
+        <!-- Menu Item 4 -->
+        <div class="menu-item">
+            <img src="{% static 'images/burger4.jpg' %}" alt="Veggie Burger">
+            <div class="menu-details">
+                <h3>No. 4 - Veggie Burger</h3>
+                <p>House-made vegan patty, with tomato, onion, and lettuce.</p>
+                <div class="price">$7.75</div>
+            </div>
+        </div>
+
+        <!-- Menu Item 5 -->
+        <div class="menu-item">
+            <img src="{% static 'images/burger5.jpg' %}" alt="Chili Cheese Burger">
+            <div class="menu-details">
+                <h3>No. 5 - Chili Cheese Burger</h3>
+                <p>With chili, melted cheese, and all the fixings.</p>
+                <div class="price">$9.00</div>
+            </div>
+        </div>
+
+        <!-- Menu Item 6 -->
+        <div class="menu-item">
+            <img src="{% static 'images/burger6.jpg' %}" alt="Grilled Chicken Burger">
+            <div class="menu-details">
+                <h3>No. 6 - Grilled Chicken Burger</h3>
+                <p>With mayo, avocado, tomato, and garlic aioli.</p>
+                <div class="price">$9.50</div>
+            </div>
+        </div>
+
+        <!-- Menu Item 7 -->
+        <div class="menu-item">
+            <img src="{% static 'images/burger7.jpg' %}" alt="Mexican Burger">
+            <div class="menu-details">
+                <h3>No. 7 - Mexican Burger</h3>
+                <p>With roasted Anaheim green chile, and jack cheese.</p>
+                <div class="price">$8.00</div>
+            </div>
+        </div>
+
+        <!-- Menu Item 8 -->
+        <div class="menu-item">
+            <img src="{% static 'images/burger8.jpg' %}" alt="Mushroom Burger">
+            <div class="menu-details">
+                <h3>No. 8 - Mushroom Burger</h3>
+                <p>Topped with melted Swiss and three types of mushrooms.</p>
+                <div class="price">$7.50</div>
+            </div>
+        </div>
+        <!-- Menu Item 9 -->
+        <div class="menu-item">
+            <img src="{% static 'images/burger9.jpg' %}" alt="Mushroom Burger">
+            <div class="menu-details">
+                <h3>No. 9 - Burger Has Wagyu Beef, Beluga Caviar</h3>
+                <p>There are also white truffles, Iberico ham and a sauce made with a Macallan single malt.</p>
+                <div class="price">$6000.00</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Return Button Section -->
+    <div class="return-btn-container">
+        <button class="return-btn" id="returnButton">Back Menu</button>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="footer">
+        © 2025 Fast Food Restaurant. All Rights Reserved.
+    </div>
+
+    <!-- Link to JavaScript -->
+    <script src="{% static 'js/burger.js' %}"></script>
+</body>
+</html>
